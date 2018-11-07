@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
+  m_Name: L0
+  m_EditorClassIdentifier: 
+  headline: Life Found in the Australian Wastelands
+  tagline: Remote probes have picked up signs of life.
+  excerpts: "The wastelands of Australia have been uninhabitable for nearly two hundred
+    years\u2026 Or so we\u2019ve thought.\r\nLast week, remote probes left in place
+    by scientists before the final evacuation of the Australian Exodus have detected
+    signs of human life. It is unclear how they have survived, though the leading
+    academic theory is that a small community fled underground before the mass evacuations.
+    Drone squads are currently being mobilized, and will be ready to further investigate
+    within the month.\r"
+  comments: 
+  tags: []
+  cheat: 0
