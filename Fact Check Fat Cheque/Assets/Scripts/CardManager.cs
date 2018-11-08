@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
+//to remove later
+using UnityEngine.SceneManagement; 
 
 public class CardManager : MonoBehaviour {
     public static CardManager instance; 
@@ -9,20 +13,31 @@ public class CardManager : MonoBehaviour {
     public List<CardClass> CardStackQueue, ApprovedCards, RejectedCards;
     public GameObject CardPrefab, CardQueue;
 
-    public List<string> TagsPublished; 
-   
+    public List<string> TagsPublished;
+
+    List<CardClass> UnusedLegitCards, UnusedCheatCards; 
+
+
     private void Awake()
     {
+        
         if (instance != null)
             Destroy(gameObject); 
         else
             instance = this;
 
+        loadCards();  
         TagsPublished = new List<string>();
+
     }
 
     private void Start()    
     {
+        //placeholder card selection
+        CardStackQueue.takeRandomElements<CardClass>(UnusedLegitCards, 3);
+        CardStackQueue.takeRandomElements<CardClass>(UnusedCheatCards, 2);
+        CardStackQueue.Shuffle<CardClass>();  
+
         spawnCards();
     }
 
@@ -33,26 +48,29 @@ public class CardManager : MonoBehaviour {
         {
             GameObject instantiatedCard = Instantiate(CardPrefab, cardQueue);
 
-            instantiatedCard.transform.GetChild(0).GetComponent<Text>().text = card.headline;
-            instantiatedCard.transform.GetChild(1).GetComponent<Text>().text = card.excerpts;
+            instantiatedCard.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = card.headline;
+            instantiatedCard.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = card.excerpts;
         }
     }
 
+    //todo refactor 
     int cheatCardsPublished = 0; 
     public void judgeCard(bool approve)
     {
+        if (CardStackQueue.Count < 1)
+            SceneManager.LoadScene(0); 
         if(approve)
         {
             ApprovedCards.Add(CardStackQueue[0]);
             foreach(string str in CardStackQueue[0].tags)
             {
                 TagsPublished.Add(str);
-                GameObject.Find("Tags").GetComponent<Text>().text += str;  
+                GameObject.Find("Tags").GetComponent<TextMeshProUGUI>().text += str + "\n";  
             }
             if (CardStackQueue[0].cheat)
                 cheatCardsPublished++;
 
-            GameObject.Find("Score").GetComponent<Text>().text = "" + cheatCardsPublished);
+            GameObject.Find("Score").GetComponent<TextMeshProUGUI>().text = "Cheat Cards Published: " + cheatCardsPublished;
         }
         else
         {
@@ -63,15 +81,20 @@ public class CardManager : MonoBehaviour {
         CardStackQueue.RemoveAt(0); 
     }
 
+    private void loadCards()
+    {
+        UnusedLegitCards = new List<CardClass>(Resources.LoadAll<CardClass>("Cards/Legit"));
+        UnusedCheatCards = new List<CardClass>(Resources.LoadAll<CardClass>("Cards/Cheat"));  
+    }
  
    
     private void Update()   
     {
-         
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-            judgeCard(true);
+            judgeCard(false);
         if (Input.GetKeyDown(KeyCode.RightArrow))
-            judgeCard(false); 
+            judgeCard(true); 
     }
 
 }

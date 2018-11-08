@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
-  m_Name: L0
+  m_Name: Life Found
   m_EditorClassIdentifier: 
   headline: Life Found in the Australian Wastelands
   tagline: Remote probes have picked up signs of life.
@@ -23,3 +23,5 @@ MonoBehaviour:
   comments: 
   tags: []
   cheat: 0
+  advertisement: 0
+  profitLevel: 0

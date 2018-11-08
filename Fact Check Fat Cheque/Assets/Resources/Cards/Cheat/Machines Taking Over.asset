@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
+  m_Name: Machines Taking Over
+  m_EditorClassIdentifier: 
+  headline: 'Are the Machines Taking Over? - Androids take control of the .01% '
+  tagline: BIGOTRY
+  excerpts: "The android uprising is finally upon us. An L3X 3500 unit, publicly known
+    as Alexander Grant, has been voted as head of the World Food Corporation\u2019s
+    board. This L3X 3500 unit has no place running the very corporation that we humans
+    rely upon for food - he doesn\u2019t even need to eat!\r\nWhich, of course, begs
+    the question: why would he be put in charge of this position that is so vital
+    for human survival? Why would he be interested in it in the first place?\r\nThe
+    answer is, of course, that we are witnessing the first steps in an android plot
+    to overtake the human race. The masses are simply too blinded to recognize it
+    for what it is.\r\nStay alert, friends. Stay alert, and stay critical. We cannot
+    take this lying down.\r\n"
+  comments: 
+  tags: []
+  cheat: 1
+  advertisement: 0
+  profitLevel: 2

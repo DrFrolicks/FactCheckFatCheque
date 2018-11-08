@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
+  m_Name: Elon Musk Frozen Head
+  m_EditorClassIdentifier: 
+  headline: "You\u2019ll Never Guess What Elon Musk\u2019s Frozen Head Said! - Ancient
+    billionaire speaks up. "
+  tagline: 
+  excerpts: "Elon Musk emerged from his year-long bio-net dive in order to share his
+    views on what the future holds:\r\n\u201CThe aliens are going to have big lips,\u201D
+    he went on record as saying. \u201CReally big. Kissable, even.\u201D\r\nHe refused
+    to comment further. When asked, NASA refused to comment. What are they hiding?
+    And when will the prophesied kissable aliens contact us?\r\n"
+  comments: 
+  tags:
+  - IGNORANCE
+  - IGNORANCE
+  - IGNORANCE
+  cheat: 1
+  advertisement: 0
+  profitLevel: 2

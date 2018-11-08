@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
+  m_Name: Sun Turned Off
+  m_EditorClassIdentifier: 
+  headline: The Sun Turned Off
+  tagline: 
+  excerpts: "Scientists have discovered a way to remotely control when to turn the
+    sun \r\nScientists claim this will help with \u201CGlobal Warming\u201D\r\nWhat
+    Scientists forgot to realize is that this harms crops and people start to go hungry,
+    which leads to deaths\r\nWORLD_POPULATION decreases \r\n*This is controversial,
+    but leads to the player getting a lot of profit\r\n"
+  comments: 
+  tags: []
+  cheat: 0
+  advertisement: 0
+  profitLevel: 0

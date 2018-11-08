@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e440698376d97344829ddfedd4323a4, type: 3}
+  m_Name: Japan AI
+  m_EditorClassIdentifier: 
+  headline: 'Japan Introduces AI That Allows Humans to Hook Up With Them '
+  tagline: 
+  excerpts: "Japanese males are sick and tired of trying to socialize with actual
+    women and develop artificial intelligence (In the form of women) to interact with.\r\nThis
+    causes the population rate to go down EVEN further in Japan\r\nThis enrages the
+    women as the AI starts being shipped overseas and affecting the rest of the world,
+    eventually decreasing WORLD_POPULATION \r\n"
+  comments: 
+  tags: []
+  cheat: 0
+  advertisement: 0
+  profitLevel: 0
