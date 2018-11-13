@@ -62,10 +62,13 @@ public class CardManager : MonoBehaviour {
         if(approve)
         {
             ApprovedCards.Add(CardStackQueue[0]);
-            foreach(string str in CardStackQueue[0].tags)
+            foreach(string tagName in CardStackQueue[0].tags)
             {
-                TagsPublished.Add(str);
-                GameObject.Find("Tags").GetComponent<TextMeshProUGUI>().text += str + "\n";  
+                Dictionary<string, int> publishedTags = GameManager.instance.publishedTags;
+                publishedTags[tagName]++; 
+                //placeholder
+                TagsPublished.Add(tagName);
+                GameObject.Find("Tags").GetComponent<TextMeshProUGUI>().text += tagName + "\n";  
             }
             if (CardStackQueue[0].cheat)
                 cheatCardsPublished++;
