@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour {
         if (instance == null)
             instance = this;
         else
-            Destroy(this); 
+            Destroy(this);
+
+        publishedTags = new Dictionary<string, int>(); 
     }
 
     public int roundNumber, roundsToWin; 
@@ -19,7 +21,6 @@ public class GameManager : MonoBehaviour {
     
     public void endRound()
     {
-    
         foreach (KeyValuePair<string, int> entry in publishedTags)
         {
             if(entry.Value >= maxTagPublished)
@@ -29,10 +30,22 @@ public class GameManager : MonoBehaviour {
                 return;
             }
         }
+
+        if (!CardManager.instance.publishedCheatCard())
+        {
+            Debug.Log("YOU DIDN'T MAKE ENOUGH MONEY! GAME OVER");
+            return;
+        }
+
         if(roundNumber >= roundsToWin)
         {
-            Debug.Log("U WIN"); 
+            Debug.Log("U WIN");
+            return; 
         }
+
+
+        //placeholder (need to add post round screen) 
+        CardManager.instance.startNewSet();   
 
     }
 }
