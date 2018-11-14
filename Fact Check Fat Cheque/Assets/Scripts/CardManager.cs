@@ -27,18 +27,11 @@ public class CardManager : MonoBehaviour {
             instance = this;
 
         loadCards();  
-        TagsPublished = new List<string>();
-
     }
 
     private void Start()    
     {
-        //placeholder card selection
-        CardStackQueue.takeRandomElements<CardClass>(UnusedLegitCards, 3);
-        CardStackQueue.takeRandomElements<CardClass>(UnusedCheatCards, 2);
-        CardStackQueue.Shuffle<CardClass>();  
-
-        spawnCards();
+        startNewSet();
     }
 
     public void spawnCards()
@@ -52,23 +45,37 @@ public class CardManager : MonoBehaviour {
             instantiatedCard.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = card.excerpts;
         }
     }
+    
+    public bool publishedCheatCard()
+    {
+        foreach(CardClass card in ApprovedCards)
+        {
+            if (card.cheat)
+                return true;  
+        }
+        return false;  
+    }
 
     //todo refactor 
     int cheatCardsPublished = 0; 
     public void judgeCard(bool approve)
     {
+        //placeholder 
         if (CardStackQueue.Count < 1)
-            SceneManager.LoadScene(0); 
+            GameManager.instance.endRound(); 
+        
         if(approve)
         {
             ApprovedCards.Add(CardStackQueue[0]);
             foreach(string tagName in CardStackQueue[0].tags)
             {
                 Dictionary<string, int> publishedTags = GameManager.instance.publishedTags;
-                publishedTags[tagName]++; 
-                //placeholder
-                TagsPublished.Add(tagName);
-                GameObject.Find("Tags").GetComponent<TextMeshProUGUI>().text += tagName + "\n";  
+                if(publishedTags.ContainsKey(tagName))
+                    publishedTags[tagName]++;
+                else
+                {
+                    publishedTags.Add(tagName, 1);
+                }
             }
             if (CardStackQueue[0].cheat)
                 cheatCardsPublished++;
@@ -82,6 +89,19 @@ public class CardManager : MonoBehaviour {
 
         Destroy(CardQueue.transform.GetChild(CardQueue.transform.childCount - 1).gameObject); 
         CardStackQueue.RemoveAt(0); 
+    }
+
+    public void startNewSet()
+    {
+        ApprovedCards = new List<CardClass>();
+        RejectedCards = new List<CardClass>();
+
+        CardStackQueue.takeRandomElements<CardClass>(UnusedLegitCards, 3);
+        CardStackQueue.takeRandomElements<CardClass>(UnusedCheatCards, 2);
+        CardStackQueue.Shuffle<CardClass>();
+
+        spawnCards();
+
     }
 
     private void loadCards()
