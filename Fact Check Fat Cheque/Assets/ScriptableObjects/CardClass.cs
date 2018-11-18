@@ -13,7 +13,7 @@ public class CardClass : ScriptableObject
     public string excerpts, comments;
 
     public List<string> tags;
-    public bool cheat, advertisement; 
+    public bool cheat; 
     public ProfitLevel profitLevel;
 
 }
